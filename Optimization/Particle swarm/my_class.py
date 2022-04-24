@@ -1,3 +1,4 @@
+from tkinter import W
 import numpy as np
 from copy import deepcopy
 from tqdm import tqdm
@@ -31,8 +32,11 @@ class ParticleSwarmMinimization:
         self.Nr_iterations     = Nr_iterations
         self.Save_history      = save_history
 
-        self.w, self.phi_p, self.phi_g  = w, phi_p, phi_g 
+        self.w     = w      # Inertia coefficient   (reluctance to change dir)
+        self.phi_p = phi_p  # Cognitive coefficient (attraction to own best)
+        self.phi_g = phi_g  # Social coefficient    (attraction to common best)
         
+        #
         if self.Save_history: 
             self.position_history = []
         
