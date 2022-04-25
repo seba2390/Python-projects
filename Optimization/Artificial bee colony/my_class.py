@@ -1,6 +1,6 @@
 import numpy as np
 from copy import deepcopy
-
+from tqdm import tqdm 
 
 
 class ArtificialBeeColony:
@@ -115,7 +115,8 @@ class ArtificialBeeColony:
         return bestFoodSource
     
     def simulate(self):
-        for iteration in range(self._Nr_iterations):
+        print("-"*10+" Performing cycles "+10*"-")
+        for iteration in tqdm(range(self._Nr_iterations)):
             self.sendEmployedBees()
             self.sendOnlookerBees()
             self.sendScoutBees()
