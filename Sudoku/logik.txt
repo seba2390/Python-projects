@@ -1,0 +1,23 @@
+Finder naked singles:
+	if True:
+		set
+		opdater anno
+		if check true
+			return true
+		recursive
+Finder hidden singles:
+	if True:
+		set
+		opdater anno
+		if check true
+			return true
+		recursive
+Finder naked pairs:
+	if True:
+		opdater anno
+		recursive
+Finder hidden pairs:
+	if True:
+		opdater anno
+		recursive
+
