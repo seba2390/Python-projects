@@ -18,17 +18,17 @@ def covariance(col1,col2):
     return covariance
 
 def covariance_matrix(data_matrix):
-    covariance_matrix = np.zeros(data_matrix.shape)
+    matrix = np.zeros(data_matrix.shape)
     for row in range(data_matrix.shape[0]):
         for col in range(data_matrix.shape[1]):
-            covariance_matrix[row][col] = covariance(data_matrix[:,row],data_matrix[:,col])
-    return covariance_matrix
+            matrix[row][col] = covariance(data_matrix[:,row],data_matrix[:,col])
+    return matrix
 
 def correlation_matrix(data_matrix):
     """ Using Pearsons correlation coefficients """ 
-    correlation_matrix = np.zeros(data_matrix.shape)
+    matrix = np.zeros(data_matrix.shape)
     for row in range(data_matrix.shape[0]):
         for col in range(data_matrix.shape[1]):
-            correlation_matrix[row][col] = covariance(data_matrix[:,row],data_matrix[:,col])
-            correlation_matrix[row][col] *= 1./np.sqrt(variance(data_matrix[:,row]) * variance(data_matrix[:,col]))
-    return correlation_matrix
+            matrix[row][col] = covariance(data_matrix[:,row],data_matrix[:,col])
+            matrix[row][col] *= 1./np.sqrt(variance(data_matrix[:,row]) * variance(data_matrix[:,col]))
+    return matrix
